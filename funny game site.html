@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>FUNNY GAMES STUDIO</title>
+    <link href="index.css" rel="stylesheet" type="text/css" />
+    <link href="secondg.html" rel="stylesheet" type = "html/css" />
+  </head>
+
+  <body>
+    <h1 align = "middle">FUNNY GAMES STUDIO</h1>
+    <p align = "middle">LOL OMOOOR </p>
+    <h3 class = "footer"> 2020 FUNNY GAMES STUDIO©</h3>
+    <script src = "Alerts.js"></script>
+  
+    <div class="btn-group">
+      <a href="index.html" class="button">First Game</a>
+      <a href="secondg.html" class="button">Second Game</a>
+      <button class="button">Button</button>
+      <button class="button">Button</button>
+    </div>
+
+    
+    <!--Game 1:-->
+    
+    <script src='https://p5js.org/assets/js/p5.complete.js'></script>
+    <script src='https://p5js.org/assets/js/p5.min.js'></script>
+    <script src='https://p5js.org/assets/js/p5.dom.min.js'></script>
+    <script src='https://p5js.org/assets/js/p5.sound.min.js'></script>
+    <script src="index.js"></script>
+
+  </body>
+<style>
+    body {
+  background-color: lightblue;
+}
+
+p {
+  font-family: Sans-Serif;
+  font-style: italic;
+}
+
+h1 {
+  font-family: Sans-Serif;
+}
+
+h3 {
+  position: absolute;
+  bottom: -100px;
+}
+
+.footer{ 
+       position: fixed;     
+       text-align: center;    
+       bottom: -20px; 
+       width: 100%;
+}  
+
+
+.btn-group .button {
+    background-color: #00E7AB; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    float: left;
+}
+
+.btn-group .button:hover {
+    background-color: #00D29B;
+}
+
+input[type=text], select {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    width: 50%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+</style>
+<script>
+    function setup() {
+  createCanvas(1260, 500);
+}
+
+function draw() {
+  var cWidth = 50;
+  var cHeight = 50;
+
+  //background(37, 29, 89);
+
+  background(random(0, 255), random(0, 255), random(0, 255));
+
+  draw = function() {
+    fill(255, 230, 0);
+
+    //fill(random(0, 255), random(0, 255), random(0, 255));
+
+    ellipse(mouseX, mouseY, cWidth, cHeight);
+
+    cWidth++;
+    cHeight++;
+
+    if (cWidth >= 200) {
+      cWidth -= 100;
+      cHeight -= 100;
+    }
+  };
+}
+
+    </Script>
+</html>
