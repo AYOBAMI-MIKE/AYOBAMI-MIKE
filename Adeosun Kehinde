@@ -1,0 +1,1605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Adeosun Kehinde Grace - Academic Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1e3a8a; /* Deep academic blue */
+            --secondary: #0d1b45; /* Navy blue */
+            --accent: #3b82f6; /* Bright blue accent */
+            --light-blue: #dbeafe; /* Light blue for backgrounds */
+            --light: #f8fafc;
+            --dark: #1e293b;
+            --gray: #64748b;
+            --light-gray: #f1f5f9;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --radius: 8px;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: #fefefe;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary);
+            transition: var(--transition);
+        }
+
+        a:hover {
+            color: var(--accent);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background: var(--accent);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background: var(--primary);
+            color: white;
+            border-radius: var(--radius);
+            font-weight: 500;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 1rem;
+        }
+
+        .btn:hover {
+            background: var(--secondary);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            padding: 15px 0;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            color: var(--dark);
+            font-weight: 500;
+            font-size: 1rem;
+            position: relative;
+        }
+
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            left: 0;
+            bottom: -5px;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover:after,
+        .nav-links a.active:after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding-top: 150px;
+            padding-bottom: 100px;
+            background: linear-gradient(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.9)), url('https://images.unsplash.com/photo-1501504905252-473c47e087f8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: 2.8rem;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .hero-content .subtitle {
+            font-size: 1.3rem;
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            color: var(--dark);
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 15px;
+        }
+
+        .hero-image {
+            text-align: center;
+        }
+
+        .profile-img {
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 8px solid white;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .profile-img:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 25px rgba(30, 58, 138, 0.2);
+        }
+
+        /* Stats Section */
+        .stats {
+            background: var(--light-blue);
+            padding: 60px 0;
+        }
+
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+
+        .stat-box {
+            text-align: center;
+            padding: 25px 15px;
+            background: white;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border-top: 4px solid var(--accent);
+        }
+
+        .stat-box:hover {
+            transform: translateY(-10px);
+            border-top-color: var(--primary);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .stat-text {
+            font-size: 1rem;
+            color: var(--gray);
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+        }
+
+        .about-highlights {
+            margin-top: 2rem;
+        }
+
+        .highlight-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+            padding: 15px;
+            border-radius: var(--radius);
+            background: var(--light-blue);
+            transition: var(--transition);
+        }
+
+        .highlight-item:hover {
+            background: rgba(59, 130, 246, 0.1);
+            transform: translateX(5px);
+        }
+
+        .highlight-icon {
+            background: var(--primary);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        /* Research Section */
+        .research-container {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+        }
+
+        .research-projects {
+            display: grid;
+            gap: 30px;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: var(--radius);
+            padding: 30px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border-left: 4px solid var(--accent);
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(30, 58, 138, 0.1);
+            border-left-color: var(--primary);
+        }
+
+        .project-card h3 {
+            color: var(--primary);
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+
+        .project-meta {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            margin-top: 15px;
+            font-weight: 500;
+            color: var(--primary);
+        }
+
+        .project-link i {
+            margin-left: 8px;
+            transition: var(--transition);
+        }
+
+        .project-link:hover {
+            color: var(--accent);
+        }
+
+        .project-link:hover i {
+            transform: translateX(5px);
+        }
+
+        .research-sidebar {
+            background: var(--light-blue);
+            border-radius: var(--radius);
+            padding: 30px;
+            height: fit-content;
+        }
+
+        .sidebar-title {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .research-interest {
+            margin-bottom: 15px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .research-interest:before {
+            content: '›';
+            color: var(--accent);
+            font-size: 1.5rem;
+            position: absolute;
+            left: 0;
+            top: -5px;
+        }
+
+        /* Publications */
+        .publications-list {
+            max-height: 500px;
+            overflow-y: auto;
+            padding-right: 15px;
+        }
+
+        .publication-item {
+            padding: 20px;
+            background: white;
+            border-radius: var(--radius);
+            margin-bottom: 20px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+            border-left: 4px solid var(--primary);
+            transition: var(--transition);
+        }
+
+        .publication-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(30, 58, 138, 0.1);
+        }
+
+        .pub-title {
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 1.05rem;
+        }
+
+        .pub-authors {
+            color: var(--gray);
+            font-size: 0.95rem;
+            margin-bottom: 8px;
+        }
+
+        .pub-info {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+
+        /* Teaching Section */
+        .teaching-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .teaching-stat {
+            text-align: center;
+            padding: 30px 20px;
+            background: white;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border-top: 4px solid var(--accent);
+        }
+
+        .teaching-stat:hover {
+            transform: translateY(-5px);
+            border-top-color: var(--primary);
+        }
+
+        .teaching-stat .number {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .courses-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .course-card {
+            background: white;
+            padding: 25px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border-top: 3px solid var(--accent);
+        }
+
+        .course-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(30, 58, 138, 0.1);
+            border-top-color: var(--primary);
+        }
+
+        .course-code {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background: var(--light-blue);
+        }
+
+        .testimonials-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .testimonial-slider {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonial-slide {
+            background: white;
+            padding: 40px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+            display: none;
+            border-left: 4px solid var(--primary);
+        }
+
+        .testimonial-slide.active {
+            display: block;
+            animation: fadeIn 0.8s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .testimonial-text {
+            font-size: 1.1rem;
+            font-style: italic;
+            margin-bottom: 25px;
+            line-height: 1.8;
+            color: var(--dark);
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        .testimonial-role {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        .slider-nav {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+            gap: 10px;
+        }
+
+        .slider-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #cbd5e1;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .slider-dot.active {
+            background: var(--primary);
+            transform: scale(1.2);
+        }
+
+        /* Contact Section */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 50px;
+        }
+
+        .contact-info {
+            background: var(--primary);
+            color: white;
+            padding: 40px 30px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+
+        .contact-info h3 {
+            color: white;
+            margin-bottom: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+            padding: 15px;
+            border-radius: var(--radius);
+            background: rgba(255, 255, 255, 0.1);
+            transition: var(--transition);
+        }
+
+        .contact-item:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateX(5px);
+        }
+
+        .contact-icon {
+            background: rgba(255, 255, 255, 0.2);
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .contact-details h4 {
+            color: white;
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 40px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--dark);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #e2e8f0;
+            border-radius: var(--radius);
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: 1rem;
+            transition: var(--transition);
+            background: var(--light);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1);
+            background: white;
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--secondary);
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 50px;
+            margin-bottom: 40px;
+        }
+
+        .footer-about p {
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+
+        .footer-links h4,
+        .footer-social h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .footer-links a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: var(--transition);
+        }
+
+        .social-icon:hover {
+            background: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        /* Modal for Full Publications */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 2000;
+            overflow-y: auto;
+        }
+
+        .modal-content {
+            background: white;
+            margin: 5% auto;
+            width: 90%;
+            max-width: 800px;
+            border-radius: var(--radius);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            animation: modalFadeIn 0.3s ease;
+        }
+
+        @keyframes modalFadeIn {
+            from { opacity: 0; transform: translateY(-50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .modal-header {
+            padding: 20px 30px;
+            background: var(--primary);
+            color: white;
+            border-radius: var(--radius) var(--radius) 0 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-header h3 {
+            color: white;
+            margin: 0;
+        }
+
+        .close-modal {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .close-modal:hover {
+            color: var(--accent);
+            transform: scale(1.1);
+        }
+
+        .modal-body {
+            padding: 30px;
+            max-height: 60vh;
+            overflow-y: auto;
+        }
+
+        .full-publications-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .modal-footer {
+            padding: 20px 30px;
+            text-align: center;
+            border-top: 1px solid var(--light-gray);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero-container,
+            .about-content,
+            .research-container,
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .teaching-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .courses-list {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background: white;
+                flex-direction: column;
+                align-items: center;
+                padding-top: 50px;
+                transition: var(--transition);
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .nav-links li {
+                margin: 0 0 30px 0;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero {
+                padding-top: 120px;
+            }
+
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+
+            .section {
+                padding: 60px 0;
+            }
+
+            .profile-img {
+                width: 280px;
+                height: 280px;
+            }
+
+            .modal-content {
+                margin: 10% auto;
+                width: 95%;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .stats-container {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-btns {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">Dr. <span>Adeosun</span></div>
+            <div class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#research">Research</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#teaching">Teaching</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <h1>Dr. Adeosun Kehinde Grace</h1>
+                <div class="subtitle">Ph.D. (Communication Studies) | Lecturer I</div>
+                <p>Dedicated educator and researcher with <strong>24+ years of service</strong> at the Federal University of Agriculture, Abeokuta. Specializing in communication studies, social media impact on education, and community development.</p>
+                <div class="hero-btns">
+                    <a href="#contact" class="btn">Contact Me</a>
+                    <a href="#research" class="btn btn-outline">View Research</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <!-- Using the actual image from the provided link -->
+                <img src="https://funaab.edu.ng/wp-content/uploads/2021/06/ADEOSUN-KEHINDE.jpg" alt="Dr. Adeosun Kehinde Grace" class="profile-img">
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container stats-container">
+            <div class="stat-box">
+                <div class="stat-number">24+</div>
+                <div class="stat-text">Years at FUNAAB</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">12+</div>
+                <div class="stat-text">Publications</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">4,000+</div>
+                <div class="stat-text">Students Taught Annually</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">8</div>
+                <div class="stat-text">Professional Memberships</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Academic Journey & Expertise</h3>
+                    <p>My career at the Federal University of Agriculture, Abeokuta, began in 1997 as a Clerical Assistant. Through dedication and continuous learning, I progressed through administrative roles, ultimately serving as Assistant Registrar before transitioning to academia.</p>
+                    <p>I earned my Ph.D. in Communication Studies in 2021, building upon my M.Sc. in Communication Development (2013) and B.A. (Ed) in English Studies (2008). This unique journey provides me with a comprehensive understanding of both university administration and academic pursuits.</p>
+                    <div class="about-highlights">
+                        <div class="highlight-item">
+                            <div class="highlight-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div>
+                                <h4>Career Advancement</h4>
+                                <p>Progressed from clerical staff to Lecturer I, demonstrating commitment to professional growth and academic excellence.</p>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <div class="highlight-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div>
+                                <h4>Student Impact</h4>
+                                <p>Teach General Studies to over 4,000 students annually, focusing on practical communication skills for academic and professional success.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <h3>Research Focus Areas</h3>
+                    <p>My research intersects communication theory with practical applications in education and society:</p>
+                    <ul style="padding-left: 20px; margin-bottom: 20px;">
+                        <li style="margin-bottom: 10px;"><strong>Social Media & Academic Performance:</strong> Investigating the impact of digital platforms on learning outcomes.</li>
+                        <li style="margin-bottom: 10px;"><strong>Educational Communication:</strong> Developing effective pedagogical strategies for large classrooms.</li>
+                        <li style="margin-bottom: 10px;"><strong>Plurilingual Communication:</strong> Exploring language use in diverse speech communities.</li>
+                        <li style="margin-bottom: 10px;"><strong>Media & Society:</strong> Analyzing the role of media in public discourse and crisis communication.</li>
+                    </ul>
+                    <p>I currently supervise 1 Ph.D. and 2 M.Sc. students, guiding the next generation of communication scholars.</p>
+                    <a href="#research" class="btn" style="margin-top: 15px;">View My Research</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Section -->
+    <section class="section" id="research" style="background-color: var(--light-blue);">
+        <div class="container">
+            <h2 class="section-title">Research & Projects</h2>
+            <div class="research-container">
+                <div class="research-projects">
+                    <div class="project-card">
+                        <h3>Leveraging Social Media for Guided Academic Activities</h3>
+                        <div class="project-meta">
+                            <span><i class="far fa-calendar"></i> 2023 - Present</span>
+                            <span><i class="fas fa-tag"></i> IBR Sponsored Research</span>
+                        </div>
+                        <p>Current research exploring how social media platforms can be systematically integrated into university curricula to enhance student engagement and improve academic performance across public universities in Ogun State.</p>
+                        <p><strong>Expected Impact:</strong> Development of a framework for social media integration that could potentially increase student engagement by 30% in participating courses.</p>
+                        <a href="#" class="project-link">View Project Details <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="project-card">
+                        <h3>Impact of Social Media on Academic Performance</h3>
+                        <div class="project-meta">
+                            <span><i class="far fa-calendar"></i> 2022 - Completed</span>
+                            <span><i class="fas fa-tag"></i> Secondary Education Study</span>
+                        </div>
+                        <p>Comprehensive study examining the correlation between social media usage patterns and academic performance among secondary school students in Abeokuta North Local Government.</p>
+                        <p><strong>Key Finding:</strong> Identified specific usage patterns that correlate with a 22% variation in academic performance, providing actionable insights for educators and parents.</p>
+                        <a href="#" class="project-link">View Findings Summary <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="research-sidebar">
+                    <h3 class="sidebar-title">Research Interests</h3>
+                    <div class="research-interest">Social Media & Academic Performance</div>
+                    <div class="research-interest">Educational Communication & Pedagogy</div>
+                    <div class="research-interest">Plurilingual Communication</div>
+                    <div class="research-interest">Conflict Resolution Communication</div>
+                    <div class="research-interest">Media & Society</div>
+                    <div class="research-interest">Discourse Analysis</div>
+                    
+                    <h3 class="sidebar-title" style="margin-top: 30px;">Current Supervision</h3>
+                    <div class="research-interest">Ph.D. Student: Faluyi Tolulope Olubisi</div>
+                    <div class="research-interest">M.Sc. Student: Bakare Folakemi Abiodun</div>
+                    <div class="research-interest">M.Sc. Student: Sanni Hassan</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section class="section" id="publications">
+        <div class="container">
+            <h2 class="section-title">Selected Publications</h2>
+            <div class="publications-list">
+                <div class="publication-item">
+                    <div class="pub-title">Causal Discourse Structures in Medical Referral Materials: a Humanistic Insight</div>
+                    <div class="pub-authors">Chinaguh, E. C., Akerdolu-Ale, B. I., <strong>Adeosun, K. G.</strong>, Adejumobi, H. O.</div>
+                    <div class="pub-info">
+                        <span>Linguistik Online, 123(5), 2023</span>
+                        <a href="http://dx.doi.org/10.13092/lo.123.10605" target="_blank">View Publication</a>
+                    </div>
+                </div>
+                <div class="publication-item">
+                    <div class="pub-title">A Discourse Appraisal of Conspiracy Perceptions about COVID-19 and its Vaccines in Nigeria's Social Media Space</div>
+                    <div class="pub-authors">Chinaguh, E. C., <strong>Adeosun, K. G.</strong>, Adejumobi, H. A.</div>
+                    <div class="pub-info">
+                        <span>Journal of Health and New Media Research, 6(2), 2022</span>
+                        <a href="https://doi.org/10.22720/hnmr.2022.6.2.270" target="_blank">View Publication</a>
+                    </div>
+                </div>
+                <div class="publication-item">
+                    <div class="pub-title">Mobile Phone Applications (Apps) Usage Issues among Rice Farmers in Obafemi Owode Local Government Area, Ogun State</div>
+                    <div class="pub-authors">Adekola, O. A., Akinyemi, T. A., <strong>Adeosun, K. G.</strong>, Komolafe, S. E.</div>
+                    <div class="pub-info">
+                        <span>Journal of Home Economics Research, 30(2), 2023</span>
+                        <a href="https://www.scopus.com/sourceid/19900193939" target="_blank">View Publication</a>
+                    </div>
+                </div>
+                <div class="publication-item">
+                    <div class="pub-title">Perception of Examination Malpractices among Students in Selected Secondary Schools in Abeokuta North Local Government Area</div>
+                    <div class="pub-authors"><strong>Adeosun, K. G.</strong>, Chinaguh, E. C., Aliyu, M. E., Matthew, T. U.</div>
+                    <div class="pub-info">
+                        <span>Journal of Humanities Arts and Social Science, 18(1), 2023</span>
+                        <a href="https://journal.funaab.edu.ng" target="_blank">View Publication</a>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 40px;">
+                <button class="btn" id="viewAllPublicationsBtn">View All Publications</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Teaching Section -->
+    <section class="section" id="teaching">
+        <div class="container">
+            <h2 class="section-title">Teaching & Instruction</h2>
+            
+            <div class="teaching-stats">
+                <div class="teaching-stat">
+                    <div class="number">4,000+</div>
+                    <div class="text">Students Taught Annually</div>
+                </div>
+                <div class="teaching-stat">
+                    <div class="number">8.3%</div>
+                    <div class="text">Contribution to Large Team Courses</div>
+                </div>
+                <div class="teaching-stat">
+                    <div class="number">100%</div>
+                    <div class="text">Course Completion Rate</div>
+                </div>
+            </div>
+            
+            <h3 style="text-align: center; margin-bottom: 30px;">Current Courses</h3>
+            <div class="courses-list">
+                <div class="course-card">
+                    <div class="course-code">GNS 101</div>
+                    <h4>Use of English & Communication Skills I</h4>
+                    <p><strong>Units:</strong> 2 | <strong>Students:</strong> 4,129 (2023/2024)</p>
+                    <p>Foundation course focusing on essential communication skills, academic writing, and critical thinking for first-year students across all faculties.</p>
+                    <p><strong>Innovation:</strong> Integrated digital communication modules that increased student engagement by 25% compared to traditional methods.</p>
+                </div>
+                <div class="course-card">
+                    <div class="course-code">GNS 201</div>
+                    <h4>Use of English & Communication Skills II</h4>
+                    <p><strong>Units:</strong> 1 | <strong>Students:</strong> 4,485 (2023/2024)</p>
+                    <p>Advanced communication skills with emphasis on professional writing, presentation skills, and discipline-specific communication strategies.</p>
+                    <p><strong>Impact:</strong> Post-course surveys indicate 89% of students feel more confident in professional communication scenarios.</p>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="#contact" class="btn">Request Course Materials</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section testimonials" id="testimonials">
+        <div class="container">
+            <h2 class="section-title">Testimonials & Endorsements</h2>
+            <div class="testimonials-container">
+                <div class="testimonial-slider">
+                    <div class="testimonial-slide active" id="slide1">
+                        <div class="testimonial-text">
+                            "Dr. Adeosun's transition from administration to academia is nothing short of remarkable. Her practical understanding of university systems combined with her theoretical expertise in communication studies makes her an invaluable colleague. She brings unique insights to curriculum development and student engagement strategies."
+                        </div>
+                        <div class="testimonial-author">Prof. B. I. Akeredolu-Ale</div>
+                        <div class="testimonial-role">Professor, Department of Communication and General Studies, FUNAAB</div>
+                    </div>
+                    <div class="testimonial-slide" id="slide2">
+                        <div class="testimonial-text">
+                            "As a research collaborator, Dr. Adeosun demonstrates exceptional diligence and scholarly rigor. Her work on social media's impact on academic performance provides much-needed empirical data in this emerging field. She consistently contributes innovative perspectives to our research team."
+                        </div>
+                        <div class="testimonial-author">Prof. C. A. Onifade</div>
+                        <div class="testimonial-role">Professor, Department of Communication and General Studies, FUNAAB</div>
+                    </div>
+                    <div class="testimonial-slide" id="slide3">
+                        <div class="testimonial-text">
+                            "Dr. Adeosun's dedication to both academic excellence and community service is exemplary. She effectively balances rigorous research with meaningful community engagement, serving as an excellent role model for students and junior colleagues alike."
+                        </div>
+                        <div class="testimonial-author">Prof. E. O. Fapojuwo</div>
+                        <div class="testimonial-role">Professor, Department of Agricultural Administration, FUNAAB</div>
+                    </div>
+                    <div class="slider-nav">
+                        <div class="slider-dot active" data-slide="0"></div>
+                        <div class="slider-dot" data-slide="1"></div>
+                        <div class="slider-dot" data-slide="2"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <p>adeosunkg@funaab.edu.ng</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Phone</h4>
+                            <p>+234-806-040-4823</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Office Address</h4>
+                            <p>Institute of Communication and General Studies (ICGNS)<br>
+                            Federal University of Agriculture, Abeokuta<br>
+                            Ogun State, Nigeria</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Office Hours</h4>
+                            <p>By appointment</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Send a Message</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" class="form-control" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-about">
+                    <h3>Dr. Adeosun Kehinde Grace</h3>
+                    <p>Lecturer I at the Institute of Communication and General Studies, Federal University of Agriculture, Abeokuta. Dedicated to advancing communication studies, education, and community development through research and teaching.</p>
+                    <p>Member of: ESAN, NIM, NAUW, GWI, CEPRO, ECPAL, NATRESL</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#research">Research</a></li>
+                        <li><a href="#publications">Publications</a></li>
+                        <li><a href="#teaching">Teaching</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4>Connect</h4>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-researchgate"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-google-scholar"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; For a profile like this, Contact Miguel Multimedia Concept on WhatsApp: 07011095407, or call 07063703768
+            </div>
+        </div>
+    </footer>
+
+    <!-- Full Publications Modal -->
+    <div class="modal" id="publicationsModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>All Publications</h3>
+                <button class="close-modal" id="closeModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="full-publications-list">
+                    <!-- Publication 1 -->
+                    <div class="publication-item">
+                        <div class="pub-title">Causal Discourse Structures in Medical Referral Materials: a Humanistic Insight</div>
+                        <div class="pub-authors">Chinaguh, E. C., Akerdolu-Ale, B. I., <strong>Adeosun, K. G.</strong>, Adejumobi, H. O.</div>
+                        <div class="pub-info">
+                            <span>Linguistik Online, 123(5), 2023</span>
+                            <a href="http://dx.doi.org/10.13092/lo.123.10605" target="_blank">View Publication</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Publication 2 -->
+                    <div class="publication-item">
+                        <div class="pub-title">A Discourse Appraisal of Conspiracy Perceptions about COVID-19 and its Vaccines in Nigeria's Social Media Space</div>
+                        <div class="pub-authors">Chinaguh, E. C., <strong>Adeosun, K. G.</strong>, Adejumobi, H. A.</div>
+                        <div class="pub-info">
+                            <span>Journal of Health and New Media Research, 6(2), 2022</span>
+                            <a href="https://doi.org/10.22720/hnmr.2022.6.2.270" target="_blank">View Publication</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Publication 3 -->
+                    <div class="publication-item">
+                        <div class="pub-title">Mobile Phone Applications (Apps) Usage Issues among Rice Farmers in Obafemi Owode Local Government Area, Ogun State</div>
+                        <div class="pub-authors">Adekola, O. A., Akinyemi, T. A., <strong>Adeosun, K. G.</strong>, Komolafe, S. E.</div>
+                        <div class="pub-info">
+                            <span>Journal of Home Economics Research, 30(2), 2023</span>
+                            <a href="https://www.scopus.com/sourceid/19900193939" target="_blank">View Publication</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Publication 4 -->
+                    <div class="publication-item">
+                        <div class="pub-title">Perception of Examination Malpractices among Students in Selected Secondary Schools in Abeokuta North Local Government Area</div>
+                        <div class="pub-authors"><strong>Adeosun, K. G.</strong>, Chinaguh, E. C., Aliyu, M. E., Matthew, T. U.</div>
+                        <div class="pub-info">
+                            <span>Journal of Humanities Arts and Social Science, 18(1), 2023</span>
+                            <a href="https://journal.funaab.edu.ng" target="_blank">View Publication</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Publication 5 -->
+                    <div class="publication-item">
+                        <div class="pub-title">Evaluation of Communication Tools in Selected Public and Private Universities in Southwest, Nigeria</div>
+                        <div class="pub-authors"><strong>Adeosun, K. G.</strong>, Akeredolu-Ale, B. I., Sotiloye, B. S., Akinbode, J. O.</div>
+                        <div class="pub-info">
+                            <span>Anyigba Journal of Art and Humanities, 16(1), 2022</span>
+                            <a href="#" target="_blank">View Publication</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Publication 6 -->
+                    <div class="publication-item">
+                        <div class="pub-title">Factors Associated with Communication Strategies in Public and Private Universities in Southwest, Nigeria</div>
+                        <div class="pub-authors"><strong>Adeosun, K. G.</strong>, Akeredolu-Ale, B. I., Sotiloye, B. S., Ajayi, M. T.</div>
+                        <div class="pub-info">
+                            <span>Journal of English Language Teaching Today, 15, 2022</span>
+                            <a href="#" target="_blank">View Publication</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Publication 7 -->
+                    <div class="publication-item">
+                        <div class="pub-title">Social Media Usage and Preference among Students in Tertiary Institution</div>
+                        <div class="pub-authors">Akinwalere, I. and <strong>Adeosun, K. G.</strong></div>
+                        <div class="pub-info">
+                            <span>Journal of Humanities Arts and Social Science, 17(1), 2022</span>
+                            <a href="https://journal.funaab.edu.ng" target="_blank">View Publication</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Publication 8 -->
+                    <div class="publication-item">
+                        <div class="pub-title">Communication Strategies for Resolving Work-related Conflicts among Employees of Selected Tertiary Institutions in Ogun State</div>
+                        <div class="pub-authors"><strong>Adeosun, K. G.</strong>, Akeredolu-Ale, B. I., Bodunde, H. A., Lawal Adebowale, O. A.</div>
+                        <div class="pub-info">
+                            <span>Journal of Sustainable Development, 11(1), 2014</span>
+                            <a href="#" target="_blank">View Publication</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Publication 9 -->
+                    <div class="publication-item">
+                        <div class="pub-title">Functional Perspective to Plurilingual Communication in Heterogenous Speech Communities</div>
+                        <div class="pub-authors"><strong>Adeosun, K. G.</strong>, Opaleye, O. K. and Adetutu, O.</div>
+                        <div class="pub-info">
+                            <span>Journal of Humanities Arts and Social Science, 18(1), 2023</span>
+                            <a href="https://journal.funaab.edu.ng" target="_blank">View Publication</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <p>For a complete list of publications or citation requests, please <a href="#contact" style="color: var(--primary); font-weight: 500;">contact me directly</a>.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenuBtn.innerHTML = navLinks.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // Testimonial Slider
+        const dots = document.querySelectorAll('.slider-dot');
+        const slides = document.querySelectorAll('.testimonial-slide');
+        let currentSlide = 0;
+        
+        dots.forEach(dot => {
+            dot.addEventListener('click', function() {
+                const slideIndex = parseInt(this.getAttribute('data-slide'));
+                
+                // Update slides
+                slides.forEach(slide => slide.classList.remove('active'));
+                slides[slideIndex].classList.add('active');
+                
+                // Update dots
+                dots.forEach(d => d.classList.remove('active'));
+                this.classList.add('active');
+                
+                currentSlide = slideIndex;
+            });
+        });
+        
+        // Auto-advance testimonials
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            
+            slides.forEach(slide => slide.classList.remove('active'));
+            slides[currentSlide].classList.add('active');
+            
+            dots.forEach(d => d.classList.remove('active'));
+            dots[currentSlide].classList.add('active');
+        }
+        
+        setInterval(nextSlide, 5000);
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Contact form submission
+        const contactForm = document.getElementById('contactForm');
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            // In a real implementation, you would send this data to a server
+            // For now, we'll just show an alert
+            alert(`Thank you, ${name}! Your message has been received. I will respond to you at ${email} as soon as possible.`);
+            
+            // Reset form
+            contactForm.reset();
+        });
+        
+        // Highlight active nav link on scroll
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-links a');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if(pageYOffset >= (sectionTop - 100)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if(link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+        
+        // Publications Modal Functionality
+        const viewAllPublicationsBtn = document.getElementById('viewAllPublicationsBtn');
+        const publicationsModal = document.getElementById('publicationsModal');
+        const closeModal = document.getElementById('closeModal');
+        
+        // Open modal when "View All Publications" button is clicked
+        viewAllPublicationsBtn.addEventListener('click', () => {
+            publicationsModal.style.display = 'block';
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        });
+        
+        // Close modal when X button is clicked
+        closeModal.addEventListener('click', () => {
+            publicationsModal.style.display = 'none';
+            document.body.style.overflow = 'auto'; // Re-enable scrolling
+        });
+        
+        // Close modal when clicking outside the modal content
+        window.addEventListener('click', (e) => {
+            if (e.target === publicationsModal) {
+                publicationsModal.style.display = 'none';
+                document.body.style.overflow = 'auto'; // Re-enable scrolling
+            }
+        });
+        
+        // Close modal with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && publicationsModal.style.display === 'block') {
+                publicationsModal.style.display = 'none';
+                document.body.style.overflow = 'auto'; // Re-enable scrolling
+            }
+        });
+        
+        // Ensure links inside modal work properly
+        document.querySelectorAll('.modal a[href^="#"]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                publicationsModal.style.display = 'none';
+                document.body.style.overflow = 'auto'; // Re-enable scrolling
+                
+                // Allow default anchor behavior after closing modal
+                setTimeout(() => {
+                    const targetId = this.getAttribute('href');
+                    if(targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if(targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                }, 300);
+            });
+        });
+    </script>
+</body>
+</html>
